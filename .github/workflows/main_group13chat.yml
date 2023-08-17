@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'Group13chat'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_610DF5CD3699411891D7F642CFBD54AA }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_274F6F47A04447EE81C269ED000AAEE1 }}
