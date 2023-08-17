@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <form method="post" class="box">
+          <h1>Enter The Chat Room</h1>
+          <p style="color: white;">Please enter your username and room code!</p>
+          <div class="form-group">
+            <label for="name" style="color: white;">Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Pick a username"
+              name="name"
+              value="{{name}}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="code" style="color: white;">Room Code:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="code"
+              placeholder="Enter Room Code in capital letters"
+              name="code"
+              value="{{code}}"
+            />
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary" name="join">Join Room</button>
+            <button type="submit" class="btn btn-success" name="create">Create Room</button>
+          </div>
+          {% if error %}
+          <div class="alert alert-danger">
+            <ul>
+              <li>{{error}}</li>
+            </ul>
+          </div>
+          {% endif %}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
