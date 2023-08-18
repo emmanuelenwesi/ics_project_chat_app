@@ -103,4 +103,7 @@ def disconnect():
     print(f"{name} has left the room {room}")
 
 if __name__ == "__main__":
-    serve(socketio.run(app, host="0.0.0.0", port=os.environ.get("PORT", 5000)))
+    if "AZURE_APP_SERVICE" in os.environ:
+        os.system("bash /home/site/wwwroot/startup.sh")
+    else:
+        socketio.run(app, host="0.0.0.0", port=os.environ.get("PORT", 5000))
