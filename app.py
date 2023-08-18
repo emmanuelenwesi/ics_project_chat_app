@@ -102,5 +102,5 @@ def disconnect():
     send({"name": name, "message": "has left the room"}, to=room)
     print(f"{name} has left the room {room}")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     serve(socketio.run(app, host="0.0.0.0", port=os.environ.get("PORT", 5000)))
